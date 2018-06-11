@@ -5,7 +5,7 @@ int n, n1, n2, n3, i, j, *pn, num[100];
 input()
 {
 	pn = num;
-	
+	int num[100];
 	printf("배수, 약수, 최대공약수, 최대공배수에서 사용할 n의 개수 : ");
 	scanf("%d", &n);
 	
@@ -67,7 +67,7 @@ process()
 			for(j=1; j<=n2; j++)
 			{
 				n3++;
-				printf("%d\n", *pn+i*n3);
+				printf("%d\n", num[i]*n3);
 			}
 		}
 	}
