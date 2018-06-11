@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-int n, n1, n2, n3, i, j, *pn, num[100];
+int n, n1, n2, n3, i, j, k, sum, *pn, num[100];
 
 input()
 {
 	pn = num;
-	int num[100];
 	printf("배수, 약수, 최대공약수, 최대공배수에서 사용할 n의 개수 : ");
 	scanf("%d", &n);
 	
@@ -55,6 +54,7 @@ input()
 
 process()
 {
+	
 	//배수 처리과정 
 	if(n1==1)
 	{
@@ -64,27 +64,103 @@ process()
 		for(i=1; i<=n; i++)
 		{
 			n3=0;
+			printf("%d의 배수\n", num[i]);
 			for(j=1; j<=n2; j++)
 			{
 				n3++;
 				printf("%d\n", num[i]*n3);
 			}
+			printf("\n");
 		}
 	}
-	//약수 처리과정0
+	//약수 처리과정
 	if(n1==2)
 	{
-		
+		for(i=1; i<=num[i]; i++)
+		{
+			printf("%d의 약수\n", num[i]);
+			for(j=1; j<=num[i]; j++)
+			{
+				if(num[i]%j==0)
+				{
+					printf("%d\n", j);
+				}
+			}
+			printf("\n");
+		}
 	}
-	//최대공배수 처리과정
+	//최소공배수 처리과정
 	if(n1==3)
 	{
+		if(n==1)
+		{
+			sum = num[n];
+		}
 		
+		if(n==2)
+		{
+			for(i=1; i<=1000; i++)
+			{
+			}	
+		}
+		printf("최소공배수 : %d", sum);
 	}
-	//최소공약수 처리과정
+	
+	//최대공약수 처리과정
 	if(n1==4)
 	{
+		if(n==1)
+		{
+			sum = num[n];
+		}
 		
+		if(n==2)
+		{
+			for(i=1; i<=1000; i++)
+			{
+				if(num[n]%i==0&&num[n-1]%i==0)
+				{
+					sum = i;
+				}
+			}
+			printf("최대공약수 : %d", sum);
+		}
+		
+		if(n==3)
+		{
+			for(i=1; i<=1000; i++)
+			{
+				if(num[n]%i==0&&num[n-1]%i==0&&num[n-2]%i==0)
+				{
+					sum = i;
+				}
+			}
+			printf("최대공약수 : %d", sum);
+		}
+		
+		if(n==4)
+		{
+			for(i=1; i<=1000; i++)
+			{
+				if(num[n]%i==0&&num[n-1]%i==0&&num[n-2]%i==0&&num[n-3]%i==0)
+				{
+					sum = i;
+				}
+			}
+			printf("최대공약수 : %d", sum);
+		}
+		
+		if(n==5)
+		{
+			for(i=1; i<=1000; i++)
+			{
+				if(num[n]%i==0&&num[n-1]%i==0&&num[n-2]%i==0&&num[n-3]%i==0&&num[n-4]%i==0)
+				{
+					sum = i;
+				}
+			}
+			printf("최대공약수 : %d", sum);
+		}
 	}
 }
 
